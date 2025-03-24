@@ -13,26 +13,70 @@ const solarSystem = [
   ];
   // 1. Print the array of Jupiter's moons to the console (no for loop, just print the entire array).
   
+  // console.log(solarSystem)
   
   // 2. Print the name of Neptune's moon "Nereid" to the console.
-  
+  // console.log(solarSystem[7].moons[1])
   
   // 3. Add a new moon called "Endor" to Venus' moons array.
-  
+  solarSystem[1].moons.unshift("Endor")
+  // console.log(solarSystem[1])
   
   // 4. Add a Pluto object to the solarSystem array using .push. The object should contain Pluto's name, ringSystem boolean, and moons array (which includes "Charon").
-  
+  solarSystem.push({
+    name: "Pluto",
+    ringSystem: null,
+    moons: ["Charon"]
+  })
+
+  // console.log(solarSystem)
   
   // 5. Add a new key-value pair to the the Earth object: the key should be 'diameter', and the value should be Earth's diameter in miles represented as a string.
-  
+  solarSystem[2].diameter = "7926"
+  // console.log(solarSystem[2])
   
   // 6. Change Mercury's ringSystem boolean to true.
+  solarSystem[0].ringSystem = "true"
+  // console.log(solarSystem)
   
   
   // 7. Change Uranus' moon "Umbriel" to "Oberon"
+  solarSystem[6].moons[3] = "Oberon"
+  // console.log(solarSystem[6])
   
   
   // 8. Iterate through the solarSystem array and print only the objects that have a ringSystem (where ringSystem: true), and ignore the others.
+  // const {name, ringSystem} = solarSystem[0] //this works to find one value but not all.
+  // console.log(ringSystem)
+
+//  console.log(Object.keys(solarSystem[0])) //this is to get the keys in the object
+
+// for(key of Object.keys(solarSystem[0])){              /// this is to get the keys using a For Of loop
+//   console.log(`${key} => ${solarSystem[0][key]}`)
+// }
+
+// const values = solarSystem.map(solarSystem => (solarSystem.name + " " + solarSystem.ringSystem)) ////store values of each ringsystem using .map
+//  solarSystem.forEach(solarSystem => console.log(solarSystem.ringSystem))   /// this is to print all of ringsystem values
+ 
+let newPlanets = []
+
+for (let x = 0; x < solarSystem.length; x++) {
+  if (solarSystem[x].ringSystem === true) {
+    let planetsWithRings = {
+      name: solarSystem[x].name,
+      ringSystem: solarSystem[x].ringSystem
+    };
+    newPlanets.push(planetsWithRings)
+
+    // console.log(solarSystem[x].name + solarSystem[x].ringSystem);
+    // console.log(solarSystem[x])
+  } 
+}
+// console.log(newPlanets)
+
+
+
+
   //////////////////////////////
   // The Solar System, Part 2 //
   //////////////////////////////
@@ -184,18 +228,20 @@ const solarSystem = [
   };
   
   // 1. Console.log the mass of Mercury
-  
+  // console.log(system.mercury.mass)
   
   // 2. Console.log the eccentricity of Venus
-  
+  // console.log(system.venus.eccentricity)
   
   // 3. Console.log the sum of the number of satellites of Jupiter, Saturn, Uranus, and Neptune (131)
-  
+  // console.log(system)
   
   // 4. Write a conditional that checks if Mercury's radiusp is a string (remember the typeof command). If Mercury's radiusp is a string, change the value to be the same as its radiuse value. (radiusp is radius at the poles, radiuse is radius at the equator).
-  
-  
+   let outerObject = system.length
+   console.log(outerObject)
+  // console.log(system.mercury.radiusp)
+    
   // 5. Console.log Mercury's radiusp (should be 2439, not 'same').
-  
+   
   
   // 6. Find the difference between Jupiter's momentum and Pluto's momentum. (To get momentum, you'll want the product of velocity and mass).
